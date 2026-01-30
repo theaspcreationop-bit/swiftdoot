@@ -3,178 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwiftDoot | Global Logistics & Supply Chain</title>
+    <title>Swiftdoot Hub | Advanced AI Logistics</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.1); }
-        .hero-pattern { background-color: #0f172a; background-image: radial-gradient(at 0% 0%, rgba(30, 58, 138, 0.5) 0, transparent 50%), radial-gradient(at 50% 0%, rgba(59, 130, 246, 0.3) 0, transparent 50%); }
-        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+        body { background-color: #0f0c29; color: #e2e8f0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow-x: hidden; }
+        .purple-gradient { background: linear-gradient(135deg, #24243e 0%, #302b63 50%, #0f0c29 100%); }
+        .neon-border { border: 1px solid rgba(147, 51, 234, 0.3); transition: all 0.3s; }
+        .neon-border:hover { border-color: #a855f7; box-shadow: 0 0 15px rgba(168, 85, 247, 0.4); }
+        .text-neon { color: #00d4ff; text-shadow: 0 0 10px rgba(0, 212, 255, 0.5); }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body>
 
-    <nav class="fixed w-full z-50 glass-nav">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-black text-xl italic">S</div>
-                <h1 class="text-2xl font-extrabold tracking-tight text-slate-800">SWIFT<span class="text-blue-600">DOOT</span></h1>
-            </div>
-            <div class="hidden md:flex space-x-8 font-semibold text-slate-600">
-                <a href="#home" class="hover:text-blue-600 transition">Home</a>
-                <a href="#services" class="hover:text-blue-600 transition">Services</a>
-                <a href="#tracking" class="hover:text-blue-600 transition">Track Order</a>
-                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
-            </div>
-            <a href="tel:9431419755" class="bg-slate-900 text-white px-6 py-2.5 rounded-full font-bold hover:bg-blue-600 transition-all flex items-center gap-2">
-                <i class="fas fa-phone-alt text-sm"></i> Call Support
-            </a>
+    <nav class="fixed w-full z-50 glass py-4 px-8 flex justify-between items-center">
+        <div class="text-2xl font-black tracking-widest text-white">SWIFT<span class="text-purple-500">DOOT</span></div>
+        <div class="hidden md:flex space-x-12 font-bold text-xs uppercase tracking-tighter">
+            <a href="#home" class="hover:text-purple-400 transition">Home</a>
+            <a href="#info" class="hover:text-purple-400 transition">Information</a>
+            <a href="#contact" class="hover:text-purple-400 transition">Contact Hub</a>
         </div>
+        <div class="md:hidden text-2xl"><i class="fas fa-bars"></i></div>
     </nav>
 
-    <section id="home" class="hero-pattern pt-40 pb-32 px-6 text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-            <div class="relative z-10">
-                <span class="bg-blue-600/20 text-blue-400 border border-blue-500/30 px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest mb-6 inline-block">Moving India Forward</span>
-                <h2 class="text-6xl lg:text-7xl font-extrabold mb-8 leading-tight">Fastest Delivery <br><span class="text-blue-500 text-glow">Every Single Time.</span></h2>
-                <p class="text-xl mb-10 text-slate-300 max-w-lg leading-relaxed">SwiftDoot provides enterprise-grade logistics solutions for businesses and individuals across Pilkhi Gajpatti and beyond.</p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#contact" class="bg-blue-600 hover:bg-blue-500 px-10 py-4 rounded-xl font-bold text-lg shadow-xl shadow-blue-500/20 transition-all">Start Shipping</a>
-                    <a href="#tracking" class="bg-white/10 hover:bg-white/20 border border-white/20 px-10 py-4 rounded-xl font-bold text-lg backdrop-blur-sm transition-all">Track ID</a>
-                </div>
+    <section id="home" class="min-h-screen flex items-center justify-center purple-gradient pt-20">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+            <div data-aos="fade-right">
+                <span class="text-purple-400 font-mono tracking-widest uppercase text-sm">Next-Gen Packing Hub</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white mt-4 mb-6">Doot AI <br><span class="text-neon">Logistics Point.</span></h1>
+                <p class="text-slate-400 text-lg mb-8 leading-relaxed">Pilkhi Gajpatti ka sabse advanced hub. Hum items ko sirf pack nahi karte, AI ki madad se optimize karte hain fast delivery ke liye.</p>
+                <button class="bg-purple-600 hover:bg-purple-500 text-white px-10 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-purple-500/20">Get Started</button>
             </div>
-            <div class="relative lg:block hidden">
-                <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=1000" class="rounded-3xl shadow-2xl border border-white/10 rotate-2" alt="Logistics Truck">
-                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-2xl text-slate-900 flex items-center gap-4 animate-bounce">
-                    <div class="bg-green-100 text-green-600 w-12 h-12 rounded-full flex items-center justify-center text-xl"><i class="fas fa-check"></i></div>
-                    <div><p class="text-xs font-bold text-slate-500 uppercase">Success Rate</p><p class="text-xl font-black">99.9% Delivered</p></div>
+            <div class="relative flex justify-center" data-aos="zoom-in">
+                <div class="w-80 h-80 bg-purple-500/20 rounded-full flex items-center justify-center animate-pulse">
+                    <i class="fas fa-box-archive text-8xl text-purple-400"></i>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="tracking" class="py-16 -mt-12 px-6 relative z-20">
-        <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl p-8 border border-slate-100">
-            <div class="flex flex-col md:flex-row gap-6 items-center">
-                <div class="flex-1 w-full">
-                    <label class="block text-sm font-bold text-slate-500 mb-2 uppercase">Enter Tracking Number</label>
-                    <input type="text" placeholder="SD-9431-XXXX" class="w-full px-6 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none transition text-lg font-mono">
+    <section id="info" class="py-32 px-6 bg-[#0a081a]">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-white tracking-tight">Hub Information</h2>
+                <div class="h-1 w-20 bg-purple-500 mt-2"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-2xl neon-border" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-bold text-purple-400 mb-4">Fast Processing</h3>
+                    <p class="text-slate-400">Hamara hub 24/7 items ko process karta hai taaki aapka package kabhi ruke na.</p>
                 </div>
-                <button class="bg-blue-600 text-white h-16 px-12 rounded-2xl font-bold text-lg hover:bg-blue-700 transition w-full md:w-auto mt-7">Track Package</button>
+                <div class="glass p-8 rounded-2xl neon-border" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-bold text-purple-400 mb-4">Safe Packing</h3>
+                    <p class="text-slate-400">Specialized bubble wrap aur shock-proof materials ka istemal, especially for fragile items.</p>
+                </div>
+                <div class="glass p-8 rounded-2xl neon-border" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-bold text-purple-400 mb-4">Gemini AI Integrated</h3>
+                    <p class="text-slate-400">Tracking aur inventory management ab Doot AI (Powered by Gemini) ke haath mein hai.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h3 class="text-4xl font-black mb-4">Why Businesses Trust SwiftDoot</h3>
-            <p class="text-slate-500">Tailored logistics for the modern world, operated from Pilkhi Gajpatti.</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-10">
-            <div class="bg-white p-10 rounded-3xl border border-slate-100 feature-card transition-all">
-                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6"><i class="fas fa-shipping-fast"></i></div>
-                <h4 class="text-2xl font-bold mb-4">Local Expertise</h4>
-                <p class="text-slate-600 leading-relaxed">Deep knowledge of Pilkhi Gajpatti and surrounding areas ensures 0 delay in local deliveries.</p>
-            </div>
-            <div class="bg-white p-10 rounded-3xl border border-slate-100 feature-card transition-all">
-                <div class="w-16 h-16 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center text-3xl mb-6"><i class="fas fa-shield-alt"></i></div>
-                <h4 class="text-2xl font-bold mb-4">Total Safety</h4>
-                <p class="text-slate-600 leading-relaxed">We provide premium packaging and insurance for fragile items. Your goods are our priority.</p>
-            </div>
-            <div class="bg-white p-10 rounded-3xl border border-slate-100 feature-card transition-all">
-                <div class="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center text-3xl mb-6"><i class="fas fa-headset"></i></div>
-                <h4 class="text-2xl font-bold mb-4">24/7 Support</h4>
-                <p class="text-slate-600 leading-relaxed">Integrated AI Support and dedicated WhatsApp hotline for real-time updates.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="bg-slate-900 text-white py-24 px-6 overflow-hidden relative">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 relative z-10">
-            <div>
-                <h3 class="text-5xl font-black mb-8 leading-tight">Let's Get Your <br>Package <span class="text-blue-500">Moving.</span></h3>
-                <div class="space-y-8">
-                    <div class="flex items-start gap-6">
-                        <div class="bg-white/10 p-4 rounded-xl"><i class="fas fa-map-marker-alt text-2xl text-blue-400"></i></div>
-                        <div><p class="font-bold text-lg">Our Headquarters</p><p class="text-slate-400">Pilkhi Gajpatti, 843121<br>Bihar, India</p></div>
+    <section id="contact" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
+            <div data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-white mb-6">Contact The Hub</h2>
+                <p class="text-slate-400 mb-10 text-lg">Humein call karein ya direct hub par visit karein. Hum 24/7 active hain.</p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-map-marker-alt text-2xl text-purple-500 mt-1"></i>
+                        <div>
+                            <p class="font-bold text-white">Hub Address</p>
+                            <p class="text-slate-400 italic">Pilkhi Gajpatti, Bihar, Muzaffarpur - 843121</p>
+                        </div>
                     </div>
-                    <div class="flex items-start gap-6">
-                        <div class="bg-white/10 p-4 rounded-xl"><i class="fas fa-envelope text-2xl text-blue-400"></i></div>
-                        <div><p class="font-bold text-lg">Email Us</p><p class="text-slate-400">swiftdoot@gmail.com</p></div>
+                    <div class="flex items-center gap-4">
+                        <i class="fas fa-envelope text-2xl text-purple-500"></i>
+                        <p class="text-slate-200">swiftdoot@gmail.com</p>
                     </div>
-                    <div class="flex items-start gap-6">
-                        <div class="bg-white/10 p-4 rounded-xl"><i class="fas fa-phone-alt text-2xl text-blue-400"></i></div>
-                        <div><p class="font-bold text-lg">Call Us</p><p class="text-slate-400">+91 9431419755</p></div>
+                    <div class="flex items-center gap-4 hover:text-green-400 transition cursor-pointer">
+                        <i class="fab fa-whatsapp text-2xl text-green-500"></i>
+                        <a href="https://wa.me/9431419755" class="text-slate-200 font-bold">+91 9431419755</a>
                     </div>
                 </div>
             </div>
-            <div class="bg-white rounded-3xl p-10 text-slate-900">
-                <h4 class="text-2xl font-bold mb-6">Send us a message</h4>
-                <form class="space-y-4">
-                    <input type="text" placeholder="Full Name" class="w-full p-4 bg-slate-50 rounded-xl border border-slate-200 focus:border-blue-600 outline-none">
-                    <input type="email" placeholder="Email Address" class="w-full p-4 bg-slate-50 rounded-xl border border-slate-200 focus:border-blue-600 outline-none">
-                    <textarea placeholder="Tell us about your logistics needs..." class="w-full p-4 bg-slate-50 rounded-xl border border-slate-200 focus:border-blue-600 outline-none h-32"></textarea>
-                    <button class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-500/20">Send Request</button>
+
+            <div class="glass p-10 rounded-3xl" data-aos="flip-left">
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-purple-400 mb-2">Full Name</label>
+                        <input type="text" class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-purple-500 text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-purple-400 mb-2">Query</label>
+                        <textarea rows="4" class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-purple-500 text-white" placeholder="Write about your package..."></textarea>
+                    </div>
+                    <button class="w-full bg-purple-600 text-white py-4 rounded-lg font-bold hover:shadow-lg hover:shadow-purple-500/40 transition">Send To Hub</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <div class="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
-        <a href="https://wa.me/9431419755" class="bg-green-500 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl hover:scale-110 transition-all">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <button onclick="toggleChat()" class="bg-blue-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl hover:scale-110 transition-all">
-            <i class="fas fa-robot"></i>
-        </button>
+    <div id="doot-ai" class="fixed bottom-10 right-10 w-16 h-16 bg-gradient-to-tr from-purple-600 to-blue-500 rounded-full flex items-center justify-center cursor-pointer shadow-2xl z-50 ring-4 ring-white/10" onclick="alert('Doot AI: Hub Status is Green. Gemini 24/7 is monitoring your items at Pilkhi Gajpatti.')">
+        <i class="fas fa-brain text-white text-2xl"></i>
     </div>
 
-    <div id="chat-box" class="hidden fixed bottom-24 right-6 w-80 md:w-96 bg-white rounded-3xl shadow-2xl border border-slate-100 z-50 flex flex-col overflow-hidden">
-        <div class="bg-slate-900 p-6 text-white flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span class="font-bold">SwiftDoot AI Support</span>
-            </div>
-            <button onclick="toggleChat()" class="text-2xl opacity-50 hover:opacity-100">&times;</button>
-        </div>
-        <div id="chat-content" class="h-80 overflow-y-auto p-6 space-y-4 bg-slate-50 text-sm">
-            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">Welcome to SwiftDoot! I'm your AI assistant. Need a shipping quote or tracking status for <b>Pilkhi Gajpatti</b>?</div>
-        </div>
-        <div class="p-4 bg-white border-t border-slate-100">
-            <input type="text" id="ai-input" placeholder="Type your query..." class="w-full p-3 bg-slate-100 rounded-xl outline-none focus:ring-2 ring-blue-500">
-        </div>
-    </div>
-
-    <footer class="bg-slate-900 border-t border-white/5 py-10 text-center">
-        <p class="text-slate-500 text-sm italic">SwiftDoot Logistics - Reliable. Faster. Professional. Serving from Pilkhi Gajpatti 843121.</p>
-    </footer>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        function toggleChat() {
-            document.getElementById('chat-box').classList.toggle('hidden');
-        }
-
-        const input = document.getElementById('ai-input');
-        input.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && input.value.trim() !== "") {
-                const content = document.getElementById('chat-content');
-                content.innerHTML += `<div class="bg-blue-600 text-white p-3 rounded-2xl ml-auto max-w-[80%]">${input.value}</div>`;
-                
-                const val = input.value.toLowerCase();
-                input.value = '';
-                
-                setTimeout(() => {
-                    let response = "I'll connect you with our human team at +91 9431419755 for specific details!";
-                    if(val.includes("price") || val.includes("rate")) response = "Our rates for Pilkhi Gajpatti start at very competitive prices. Please share your weight and destination.";
-                    if(val.includes("track")) response = "Please enter your tracking ID in the box on our homepage for real-time GPS location.";
-                    
-                    content.innerHTML += `<div class="bg-white p-3 rounded-2xl shadow-sm border border-slate-100 max-w-[80%]">${response}</div>`;
-                    content.scrollTop = content.scrollHeight;
-                }, 1000);
-            }
-        });
+        AOS.init({ duration: 1000, once: true });
     </script>
 </body>
 </html>
