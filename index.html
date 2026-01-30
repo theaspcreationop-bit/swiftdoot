@@ -3,146 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swiftdoot | Muzaffarpur Logistics Hub</title>
+    <title>Swiftdoot Hub | Mithanpura Muzaffarpur Logistics</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+
     <style>
-        body { background-color: #0d0b21; color: #e2e8f0; font-family: 'Inter', sans-serif; }
-        .logistics-gradient { background: linear-gradient(135deg, #1a1645 0%, #0d0b21 100%); }
-        .neon-purple { color: #a855f7; text-shadow: 0 0 15px rgba(168, 85, 247, 0.5); }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.08); }
-        .truck-anim { animation: drive 3s infinite linear; }
-        @keyframes drive { 0% { transform: translateX(-10px); } 50% { transform: translateX(10px); } 100% { transform: translateX(-10px); } }
-        .nav-link:hover { color: #a855f7; border-bottom: 2px solid #a855f7; }
+        :root {
+            --primary-bg: #0b091a;
+            --accent-purple: #9333ea;
+            --neon-blue: #00d4ff;
+        }
+
+        body { 
+            background-color: var(--primary-bg); 
+            color: #e2e8f0; 
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .heading-font { font-family: 'Syncopate', sans-serif; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0b091a; }
+        ::-webkit-scrollbar-thumb { background: #9333ea; border-radius: 10px; }
+
+        /* Animations & FX */
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.08); }
+        
+        .neon-text-purple { text-shadow: 0 0 15px rgba(147, 51, 234, 0.7); }
+        .neon-text-blue { text-shadow: 0 0 15px rgba(0, 212, 255, 0.7); }
+
+        .truck-glow {
+            filter: drop-shadow(0 0 15px rgba(147, 51, 234, 0.5));
+            animation: drive 4s ease-in-out infinite;
+        }
+
+        @keyframes drive {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-10px) translateX(15px); }
+        }
+
+        .gradient-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #9333ea, #00d4ff, transparent);
+        }
+
+        .nav-link { position: relative; transition: 0.3s; }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -5px; left: 0;
+            width: 0%; height: 2px; background: #9333ea; transition: 0.3s;
+        }
+        .nav-link:hover::after { width: 100%; }
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body>
 
-    <nav class="fixed w-full z-[100] glass px-6 py-4 flex justify-between items-center">
-        <div class="text-2xl font-black italic tracking-tighter text-white">
-            SWIFT<span class="text-purple-500">DOOT</span><span class="text-xs ml-2 text-cyan-400">LOGISTICS HUB</span>
+    <nav class="fixed w-full z-[100] glass px-6 md:px-12 py-5 flex justify-between items-center">
+        <div class="heading-font text-xl md:text-2xl font-bold tracking-tighter">
+            SWIFT<span class="text-purple-500">DOOT</span>
+            <span class="block text-[8px] tracking-[4px] text-cyan-400">LOGISTICS POINT</span>
         </div>
         
-        <div class="hidden md:flex space-x-10 font-bold text-xs uppercase tracking-widest">
-            <a href="#home" class="nav-link transition py-2">Home</a>
-            <a href="#tracking" class="nav-link transition py-2">Track Item</a>
-            <a href="#info" class="nav-link transition py-2">Hub Services</a>
-            <a href="#contact" class="nav-link transition py-2">Contact</a>
+        <div class="hidden md:flex space-x-10 text-[10px] font-black uppercase tracking-[2px]">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#tracking" class="nav-link">Track Maal</a>
+            <a href="#about" class="nav-link">About Hub</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
 
-        <div class="md:hidden text-2xl text-purple-500 cursor-pointer">
-            <i class="fas fa-bars-staggered"></i>
-        </div>
+        <div class="md:hidden text-2xl text-purple-500"><i class="fas fa-bars-staggered"></i></div>
     </nav>
 
-    <section id="home" class="min-h-screen flex items-center justify-center logistics-gradient relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center z-10">
-            <div data-aos="fade-right">
-                <div class="inline-block bg-purple-500/10 px-4 py-1 rounded-full text-purple-400 font-bold text-xs mb-4 border border-purple-500/20">
-                    <i class="fas fa-location-dot mr-2"></i>MITHANPURA HUB ACTIVE
-                </div>
-                <h1 class="text-6xl md:text-8xl font-black text-white leading-[0.9] mb-6">
-                    FASTEST <br><span class="neon-purple">LOGISTICS</span> <br>POINT.
+    <section id="home" class="min-h-screen flex items-center relative pt-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right" data-aos-duration="1200">
+                <h4 class="text-cyan-400 font-bold tracking-[5px] text-xs mb-4 uppercase">Mithanpura Muzaffarpur Hub</h4>
+                <h1 class="heading-font text-5xl md:text-8xl font-black leading-none text-white mb-6">
+                    POWERED <br><span class="text-purple-500 neon-text-purple">BY DOOT.</span>
                 </h1>
-                <p class="text-slate-400 text-lg mb-8 max-w-md">Muzaffarpur ka sabse tez logistics center. Items ki packing, sorting aur dispatch ab ek hi jagah par.</p>
-                <div class="flex gap-4">
-                    <a href="#tracking" class="bg-purple-600 hover:bg-white hover:text-purple-900 px-8 py-4 rounded-xl font-black transition-all">TRACK SHIPMENT</a>
+                <p class="text-slate-400 text-lg mb-10 max-w-lg border-l-2 border-purple-600 pl-6">
+                    Fastest logistics sorting point in Bihar. We process, pack, and dispatch with 99.9% precision using Doot-Logic.
+                </p>
+                <div class="flex flex-wrap gap-5">
+                    <a href="#tracking" class="bg-purple-600 hover:bg-white hover:text-purple-900 px-10 py-4 rounded-full font-black transition-all shadow-xl">CHECK STATUS</a>
+                    <a href="https://wa.me/919431419755" class="glass border border-white/20 px-10 py-4 rounded-full font-black hover:bg-white/10 transition">WHATSAPP HUB</a>
                 </div>
             </div>
-            <div class="flex justify-center" data-aos="zoom-out" data-aos-delay="200">
-                <div class="relative">
-                    <i class="fas fa-truck-fast text-[200px] text-purple-500/20 truck-anim"></i>
-                    <i class="fas fa-box text-8xl text-purple-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-2xl"></i>
+            <div class="relative flex justify-center items-center" data-aos="zoom-in-left">
+                <div class="absolute w-[300px] h-[300px] bg-purple-600/20 rounded-full blur-[80px]"></div>
+                <i class="fas fa-truck-fast text-[180px] md:text-[250px] text-white/10 truck-glow"></i>
+            </div>
+        </div>
+    </section>
+
+    <div class="gradient-line"></div>
+
+    <section id="tracking" class="py-32 bg-[#080617] px-6">
+        <div class="max-w-5xl mx-auto text-center mb-16" data-aos="fade-up">
+            <h2 class="heading-font text-3xl font-bold text-white mb-4">Track Shipment</h2>
+            <p class="text-slate-500">Apne package ka status Mithanpura hub se check karein.</p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto glass p-3 rounded-3xl md:rounded-full" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row gap-2">
+                <input type="text" placeholder="Enter Tracking Number..." class="flex-1 bg-transparent p-5 px-8 outline-none text-white font-mono text-xl">
+                <button class="bg-purple-600 hover:bg-cyan-500 text-white font-black px-12 py-5 rounded-3xl md:rounded-full transition-all">SEARCH</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="glass p-10 rounded-[2rem] hover:-translate-y-4 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-box-open text-4xl text-purple-500 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4 text-white uppercase tracking-wider">Heavy Packing</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">Industrial grade packaging for safe transport across long distances. Hum har item ko special treat karte hain.</p>
+                </div>
+                <div class="glass p-10 rounded-[2rem] border-b-4 border-purple-600 shadow-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-bolt text-4xl text-cyan-400 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4 text-white uppercase tracking-wider">Hyper-Local Flow</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">Mithanpura hub se Muzaffarpur ke har kone me delivery within 24 hours. Fastest in the city.</p>
+                </div>
+                <div class="glass p-10 rounded-[2rem] hover:-translate-y-4 transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-shield-halved text-4xl text-purple-500 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4 text-white uppercase tracking-wider">Doot Security</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">CCTV aur Gemini-powered digital logs se har package par 24/7 nazar rakhi jati hai.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="tracking" class="py-24 bg-[#080617] px-6">
-        <div class="max-w-4xl mx-auto glass p-10 rounded-[2rem]" data-aos="fade-up">
-            <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                <i class="fas fa-magnifying-glass text-purple-500"></i> Track Your Maal
-            </h2>
-            <div class="flex flex-col md:flex-row gap-4">
-                <input type="text" placeholder="Enter Consignment Number..." class="flex-1 bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-purple-500 text-white font-mono">
-                <button class="bg-white text-black font-bold px-10 py-5 rounded-2xl hover:bg-purple-500 hover:text-white transition">CHECK STATUS</button>
-            </div>
-        </div>
-
-        <div id="info" class="max-w-7xl mx-auto mt-32 grid md:grid-cols-3 gap-8">
-            <div class="p-10 border-l-4 border-purple-500 bg-white/5 hover:bg-white/10 transition" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-2xl font-black mb-4 uppercase">Bulk Packing</h3>
-                <p class="text-slate-400">Large items aur industrial goods ki safe packing humari speciality hai. Zero damage guarantee.</p>
-            </div>
-            <div class="p-10 border-l-4 border-cyan-500 bg-white/5 hover:bg-white/10 transition" data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-2xl font-black mb-4 uppercase">Local Hub Sorting</h3>
-                <p class="text-slate-400">Muzaffarpur aur Bihar ke har kone ke liye dedicated sorting lanes.</p>
-            </div>
-            <div class="p-10 border-l-4 border-purple-500 bg-white/5 hover:bg-white/10 transition" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="text-2xl font-black mb-4 uppercase">Hub Delivery</h3>
-                <p class="text-slate-400">Mithanpura point se dispatch hote hi real-time SMS alerts.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-32 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20">
+    <section id="contact" class="py-32 bg-[#050410] px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
             <div data-aos="fade-right">
-                <h2 class="text-5xl font-black mb-10">MITHANPURA <br>HUB <span class="text-purple-500">INFO.</span></h2>
-                <div class="space-y-8">
-                    <div class="flex gap-6">
-                        <div class="w-14 h-14 bg-purple-500 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-500/30">
-                            <i class="fas fa-map-location-dot text-white text-xl"></i>
-                        </div>
+                <h2 class="heading-font text-4xl font-black mb-8">HUB <span class="text-cyan-400">LOCATION.</span></h2>
+                
+                <div class="space-y-10">
+                    <div class="flex items-start gap-6">
+                        <div class="text-3xl text-purple-500"><i class="fas fa-location-dot"></i></div>
                         <div>
-                            <h4 class="font-bold text-xl text-white">Hub Address</h4>
-                            <p class="text-slate-400">Mithanpura, Muzaffarpur, Bihar - 842002</p>
+                            <p class="text-xs uppercase font-bold text-slate-500 mb-1 tracking-widest">Main Point</p>
+                            <p class="text-xl text-white font-bold italic">Mithanpura, Muzaffarpur, Bihar - 842002</p>
                         </div>
                     </div>
-                    <div class="flex gap-6">
-                        <div class="w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-green-500/30">
-                            <i class="fab fa-whatsapp text-white text-2xl"></i>
-                        </div>
+
+                    <div class="flex items-start gap-6">
+                        <div class="text-3xl text-purple-500"><i class="fas fa-envelope"></i></div>
                         <div>
-                            <h4 class="font-bold text-xl text-white">WhatsApp Line</h4>
-                            <p class="text-slate-400">+91 9431419755</p>
+                            <p class="text-xs uppercase font-bold text-slate-500 mb-1 tracking-widest">Digital Mail</p>
+                            <p class="text-xl text-white font-bold">swiftdoot@gmail.com</p>
                         </div>
                     </div>
-                    <div class="flex gap-6">
-                        <div class="w-14 h-14 bg-blue-500 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-500/30">
-                            <i class="fas fa-envelope text-white text-xl"></i>
-                        </div>
+
+                    <div class="flex items-start gap-6">
+                        <div class="text-3xl text-green-500"><i class="fab fa-whatsapp"></i></div>
                         <div>
-                            <h4 class="font-bold text-xl text-white">Email</h4>
-                            <p class="text-slate-400">swiftdoot@gmail.com</p>
+                            <p class="text-xs uppercase font-bold text-slate-500 mb-1 tracking-widest">Instant Chat</p>
+                            <p class="text-xl text-white font-bold">+91 9431419755</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="glass p-12 rounded-[3rem]" data-aos="fade-left">
-                <h3 class="text-2xl font-bold mb-8 italic">Send Hub Query</h3>
-                <form class="space-y-5">
-                    <input type="text" placeholder="Owner/Manager Name" class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-purple-500">
-                    <input type="email" placeholder="Email Address" class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-purple-500">
-                    <textarea placeholder="Package Details / Bulk Booking" rows="4" class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-purple-500"></textarea>
-                    <button class="w-full bg-purple-600 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-white hover:text-purple-600 transition">Initialize Dispatch</button>
+            <div class="glass p-10 md:p-14 rounded-[3rem]" data-aos="flip-left">
+                <h3 class="text-2xl font-bold mb-8">HUB QUERY BOT</h3>
+                <form class="space-y-6" id="dootForm">
+                    <input type="text" id="name" placeholder="Full Name" required 
+                           class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-purple-500 transition-all">
+                    
+                    <input type="tel" id="phone" placeholder="Mobile Number" required 
+                           class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-purple-500 transition-all">
+                    
+                    <textarea id="msg" placeholder="Tell us about your package or service needed..." rows="4" 
+                              class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-purple-500 transition-all"></textarea>
+                    
+                    <button type="button" onclick="submitToWhatsapp()"
+                            class="w-full bg-white text-black font-black py-5 rounded-2xl hover:bg-purple-600 hover:text-white transition-all shadow-2xl">
+                        CONNECT TO HUB WHATSAPP
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <div class="fixed bottom-10 right-10 group z-[200]">
-        <div class="absolute -top-12 right-0 bg-white text-black px-4 py-1 rounded-lg text-xs font-bold opacity-0 group-hover:opacity-100 transition">Doot AI Active</div>
-        <div class="w-20 h-20 bg-gradient-to-tr from-purple-600 to-blue-500 rounded-3xl flex items-center justify-center cursor-pointer shadow-2xl rotate-12 hover:rotate-0 transition-all border-4 border-white/10" onclick="alert('Doot AI (Gemini 24/7): Mithanpura Hub status is Operational. How can I help with your logistics?')">
-            <i class="fas fa-robot text-white text-3xl"></i>
+    <footer class="py-10 text-center text-slate-600 text-[10px] tracking-[4px] uppercase font-bold border-t border-white/5">
+        &copy; 2026 SWIFTDOOT LOGISTICS | MITHANPURA BRANCH
+    </footer>
+
+    <div class="fixed bottom-10 right-10 z-[200]" data-aos="zoom-in" data-aos-delay="1000">
+        <div onclick="alert('Doot AI: Muzaffarpur Mithanpura Hub is fully functional. No delays reported.')"
+             class="w-20 h-20 bg-gradient-to-tr from-purple-600 to-cyan-500 rounded-[25px] flex items-center justify-center cursor-pointer shadow-[0_0_30px_rgba(147,51,234,0.5)] rotate-12 hover:rotate-0 transition-all group">
+            <i class="fas fa-robot text-white text-3xl group-hover:scale-110 transition"></i>
         </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: false });
+        AOS.init();
+
+        function submitToWhatsapp() {
+            const phoneNumber = "919431419755";
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const msg = document.getElementById('msg').value;
+
+            if(!name || !phone) {
+                alert("Bhai, Details toh bhardo!");
+                return;
+            }
+
+            const finalMsg = `*-- NEW HUB QUERY --*%0A*From:* ${name}%0a*Phone:* ${phone}%0a*Details:* ${msg}%0a%0a_Sent via Swiftdoot Web Portal_`;
+            const waUrl = `https://wa.me/${phoneNumber}?text=${finalMsg}`;
+            
+            window.open(waUrl, '_blank').focus();
+        }
     </script>
 </body>
 </html>
